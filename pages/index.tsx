@@ -4,7 +4,13 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import graphql from "../lib/graphql";
 
-const Home: NextPage = ({ characters }) => {
+interface HomeProps {
+  characters: {
+    name: string;
+  }[];
+}
+
+const Home: NextPage<HomeProps> = ({ characters }) => {
   return (
     <div className={styles.container}>
       <Head>
