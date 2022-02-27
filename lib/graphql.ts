@@ -1,4 +1,4 @@
-export default async function (query: string) {
+const graphql = async function (query: string) {
     // @ts-ignore
     const res = await fetch(process.env.GRAPHQL_URL, {
         method: 'POST',
@@ -9,3 +9,5 @@ export default async function (query: string) {
     })
     return await res.json();
 };
+
+export default graphql;
